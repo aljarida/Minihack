@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="index.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soup Kitchen Aggregator</title>
@@ -54,6 +55,20 @@
             card.appendChild(description);
 
             section.appendChild(card);
+
+            const expandedContent = document.createElement("div");
+            expandedContent.classList.add("expanded-content");
+            expandedContent.style.display = "none"; // Initially hide the expanded content
+
+            // Add additional information elements here, e.g., description, phone, etc.
+            const staffAvailability = document.createElement("p");
+            staffAvailability.textContent = `Staff Availability: ${soupKitchen.staffAvailability}`;
+
+            expandedContent.appendChild(staffAvailability);
+            // Add more information elements as needed
+
+            // Append the expanded content to the card
+            card.appendChild(expandedContent);
 
             return section;
         }

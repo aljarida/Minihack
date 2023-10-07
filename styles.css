@@ -82,3 +82,39 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
+
+.soup-kitchen {
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.soup-kitchen.expanded {
+    transform: scale(1.2);
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    overflow-y: scroll;
+}
+
+.soup-kitchen.expanded .soup-kitchen-card {
+    background-color: white;
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 85%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.soup-kitchen.expanded .expanded-content {
+    display: block;
+    padding-top: 20px;
+}
+
+.soup-kitchen.expanded .expanded-content p {
+    margin: 10px 0;
+}
