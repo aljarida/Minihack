@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="lib/geolib.js"></script>
     <script src="index.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,11 +68,22 @@
             const image = document.createElement("img");
             image.src = soupKitchen.image;
 
+            const distance = document.createElement("p");
+            calculateDistanceToCurrentLocation(soupKitchen.location, (error, distanceValue) => {
+                if (error) {
+                    console.error(error);
+                    distance.textContent = `Error calculating distance. ${error}`;
+                } else {
+                    distance.textContent = `Distance: ${distanceValue.toFixed(2)} km`;
+                }
+            });
+
             image.style.width = "50%";
             image.style.height = "auto";
 
             expandedContent.appendChild(staffAvailability);
             expandedContent.appendChild(image);
+            expandedContent.appendChild(distance);
             // Add more information elements as needed
 
             // Append the expanded content to the card
