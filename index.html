@@ -31,100 +31,107 @@
     <script>
         // Function to create a soup kitchen card based on the data
         function createSoupKitchenCard(soupKitchen) {
-            const section = document.createElement("section");
-            section.classList.add("soup-kitchen");
+    const section = document.createElement("section");
+    section.classList.add("soup-kitchen");
 
-            const card = document.createElement("div");
-            card.classList.add("soup-kitchen-card");
+    const card = document.createElement("div");
+    card.classList.add("soup-kitchen-card");
+    card.style.display = "flex"; // Use Flexbox layout
 
-            const h2 = document.createElement("h2");
-            h2.textContent = soupKitchen.name;
+    // Left-aligned image container with a narrower width
+    const imageContainer = document.createElement("div");
+    imageContainer.classList.add("image-container");
+    imageContainer.style.width = "30%"; // Adjust the width as needed
 
-            const address = document.createElement("p");
-            address.textContent = `Address: ${soupKitchen.location}`;
+    const image = document.createElement("img");
+    image.src = soupKitchen.image;
 
-            const hours = document.createElement("p");
-            hours.textContent = `Hours: ${soupKitchen.weekdayHours}`;
+    // Set image styles
+    image.style.width = "100%";
+    image.style.height = "auto";
+    image.style.borderRadius = "10px"; // Round the image corners
 
-            const description = document.createElement("p");
-            description.textContent = `Description: ${soupKitchen.description}`;
 
-            card.appendChild(h2);
-            card.appendChild(address);
-            card.appendChild(hours);
-            card.appendChild(description);
 
-            section.appendChild(card);
+    // Append the image to the image container
+    imageContainer.appendChild(image);
 
-            const expandedContent = document.createElement("div");
-            expandedContent.classList.add("expanded-content");
-            expandedContent.style.display = "none"; // Initially hide the expanded content
+    // Create a container for text content
+    const content = document.createElement("div");
+    content.classList.add("card-content");
 
-            // Add additional information elements here, e.g., description, phone, etc.
-            const staffAvailability = document.createElement("p");
-            staffAvailability.textContent = `Staff Availability: ${soupKitchen.staffAvailability}`;
+    // Adjust the width of the text content container
+    content.style.width = "70%"; // Adjust the width as needed
+    content.style.padding = "10px"; // Add padding for better readability
 
-            const halal = document.createElement("p");
-            halal.textContent = `Halal: ${soupKitchen.halal}`;
+    const h2 = document.createElement("h2");
+    h2.textContent = soupKitchen.name;
 
-            const image = document.createElement("img");
-            image.src = soupKitchen.image;
+    const address = document.createElement("p");
+    address.textContent = `Address: ${soupKitchen.location}`;
 
-            const distance = document.createElement("p");
-            calculateDistanceToCurrentLocation(soupKitchen.location, (error, distanceValue) => {
-                if (error) {
-                    console.error(error);
-                    distance.textContent = `Error calculating distance. ${error}`;
-                } else {
-                    distance.textContent = `Distance: ${distanceValue.toFixed(2)} km`;
-                }
-            });
+    const hours = document.createElement("p");
+    hours.textContent = `Hours: ${soupKitchen.weekdayHours}`;
 
-            image.style.width = "50%";
-            image.style.height = "auto";
+    const description = document.createElement("p");
+    description.textContent = `Description: ${soupKitchen.description}`;
 
-            const veganElement = document.createElement("p");
-            veganElement.textContent = `Vegan: ${soupKitchen.vegan}`;
+    // Add spacing between text elements
+    h2.style.marginBottom = "10px";
+    address.style.marginBottom = "10px";
+    hours.style.marginBottom = "10px";
+    description.style.marginBottom = "10px";
 
-            const lactoseIntolerantElement = document.createElement("p");
-            lactoseIntolerantElement.textContent = `Lactose-Intolerant Friendly: ${soupKitchen.lactoseIntolerant}`;
+    // Append text content elements to the content container
+    content.appendChild(h2);
+    content.appendChild(address);
+    content.appendChild(hours);
+    content.appendChild(description);
 
-            const headCountElement = document.createElement("p");
-            headCountElement.textContent = `Head Count: ${soupKitchen.headCount}`;
+    // Add the image container and text content container to the card
+    card.appendChild(imageContainer);
+    card.appendChild(content);
 
-            const totalCapacityElement = document.createElement("p");
-            totalCapacityElement.textContent = `Total Capacity: ${soupKitchen.totalCapacity}`;
+    section.appendChild(card);
 
-            const waitTimeElement = document.createElement("p");
-            waitTimeElement.textContent = `Wait Time: ${soupKitchen.waitTime}`;
+    const expandedContent = document.createElement("div");
+    expandedContent.classList.add("expanded-content");
+    expandedContent.style.display = "none"; // Initially hide the expanded content
+    expandedContent.style.padding = "10px"; // Add padding for better readability
+    expandedContent.style.backgroundColor = "#f0f0f0"; // Light background color
+    expandedContent.style.borderRadius = "10px"; // Rounded corners
 
-            const volunteerOpeningsElement = document.createElement("p");
-            volunteerOpeningsElement.textContent = `Volunteer Openings: ${soupKitchen.volunteerOpenings}`;
+    // Add additional information elements here, e.g., description, phone, etc.
+    const staffAvailability = document.createElement("p");
+    staffAvailability.textContent = `Staff Availability: ${soupKitchen.staffAvailability}`;
 
-            const skillsNeededElement = document.createElement("p");
-            skillsNeededElement.textContent = `Skills Needed: ${soupKitchen.skillsNeeded}`;
+    const halal = document.createElement("p");
+    halal.textContent = `Halal: ${soupKitchen.halal}`;
 
-            expandedContent.appendChild(image);
-            expandedContent.appendChild(distance);
-            expandedContent.appendChild(staffAvailability);
-            expandedContent.appendChild(halal);
-            expandedContent.appendChild(skillsNeededElement);
-            expandedContent.appendChild(waitTimeElement);
-            expandedContent.appendChild(totalCapacityElement);
-            expandedContent.appendChild(headCountElement);
-            expandedContent.appendChild(lactoseIntolerantElement);
-            expandedContent.appendChild(veganElement);
-            
-            // Add more information elements as needed
-
-            // Append the expanded content to the card
-            card.appendChild(expandedContent);
-
-            return section;
+    const distance = document.createElement("p");
+    calculateDistanceToCurrentLocation(soupKitchen.location, (error, distanceValue) => {
+        if (error) {
+            console.error(error);
+            distance.textContent = `Error calculating distance. ${error}`;
+        } else {
+            distance.textContent = `Distance: ${distanceValue.toFixed(2)} km`;
         }
+    });
+
+    expandedContent.appendChild(distance);
+    expandedContent.appendChild(staffAvailability);
+    expandedContent.appendChild(halal);
+
+    // Add more information elements as needed
+
+    // Append the expanded content to the card
+    card.appendChild(expandedContent);
+
+    return section;
+}
 
         // Function to populate the container with soup kitchens
-        function populateSoupKitchens() {
+        /*function populateSoupKitchens() {
             const container = document.getElementById("soupKitchensContainer");
 
             SOUPKITCHENS.forEach((soupKitchen) => {
@@ -147,6 +154,14 @@
                         });
                     }
                 });
+            });
+        }*/
+        function populateSoupKitchens() {
+            const container = document.getElementById("soupKitchensContainer");
+
+            SOUPKITCHENS.forEach((soupKitchen) => {
+                const soupKitchenCard = createSoupKitchenCard(soupKitchen);
+                container.appendChild(soupKitchenCard);
             });
         }
 
