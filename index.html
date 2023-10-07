@@ -64,7 +64,14 @@
             const staffAvailability = document.createElement("p");
             staffAvailability.textContent = `Staff Availability: ${soupKitchen.staffAvailability}`;
 
+            const image = document.createElement("img");
+            image.src = soupKitchen.image;
+
+            image.style.width = "50%";
+            image.style.height = "auto";
+
             expandedContent.appendChild(staffAvailability);
+            expandedContent.appendChild(image);
             // Add more information elements as needed
 
             // Append the expanded content to the card

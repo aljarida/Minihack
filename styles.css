@@ -89,7 +89,7 @@ footer {
 }
 
 .soup-kitchen.expanded {
-    transform: scale(1.2);
+    transform: scale(1);
     background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
     top: 0;
