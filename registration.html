@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="soupkitchens.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soup Kitchen Registration</title>
@@ -102,8 +103,16 @@
 </head>
 <body>
     <header>
-        <a href="#">Home</a>
-        <a href="#">About Us</a>
+        <nav class="sticky">
+            <div class="container">
+                <h1>Soup Kitchen Aggregator</h1>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="registration.html">Add Your Kitchen</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <form id="registration-form">
         <label for="username">Username:</label>
