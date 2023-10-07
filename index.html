@@ -13,7 +13,7 @@
                 <h1>Soup Kitchen Aggregator</h1>
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Add Your Kitchen</a></li>
+                    <li><a href="registration.html">Add Your Kitchen</a></li>
                     <li><a href="#">About Us</a></li>
                 </ul>
             </div>
@@ -21,35 +21,56 @@
     </header>
 
     <main>
-        <div class="container">
-            <section class="soup-kitchen">
-                <div class="soup-kitchen-card">
-                    <h2>Soup Kitchen 1</h2>
-                    <p>Address: 123 Main Street</p>
-                    <p>Hours: Mon-Fri 11:00 AM - 2:00 PM</p>
-                    <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </section>
-
-            <section class="soup-kitchen">
-                <div class="soup-kitchen-card">
-                    <h2>Soup Kitchen 2</h2>
-                    <p>Address: 456 Elm Street</p>
-                    <p>Hours: Tue-Sat 10:30 AM - 1:30 PM</p>
-                    <p>Description: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </section>
-
-            <section class="soup-kitchen">
-                <div class="soup-kitchen-card">
-                    <h2>Soup Kitchen 3</h2>
-                    <p>Address: 789 Oak Street</p>
-                    <p>Hours: Mon-Sat 11:30 AM - 2:30 PM</p>
-                    <p>Description: Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-            </section>
+        <div class="container" id="soupKitchensContainer">
+            <!-- Content will be generated here -->
         </div>
     </main>
+
+    <script src="soupkitchens.js"></script>
+    <script>
+        // Function to create a soup kitchen card based on the data
+        function createSoupKitchenCard(soupKitchen) {
+            const section = document.createElement("section");
+            section.classList.add("soup-kitchen");
+
+            const card = document.createElement("div");
+            card.classList.add("soup-kitchen-card");
+
+            const h2 = document.createElement("h2");
+            h2.textContent = soupKitchen.name;
+
+            const address = document.createElement("p");
+            address.textContent = `Address: ${soupKitchen.location}`;
+
+            const hours = document.createElement("p");
+            hours.textContent = `Hours: ${soupKitchen.weekdayHours}`;
+
+            const description = document.createElement("p");
+            description.textContent = `Description: ${soupKitchen.description}`;
+
+            card.appendChild(h2);
+            card.appendChild(address);
+            card.appendChild(hours);
+            card.appendChild(description);
+
+            section.appendChild(card);
+
+            return section;
+        }
+
+        // Function to populate the container with soup kitchens
+        function populateSoupKitchens() {
+            const container = document.getElementById("soupKitchensContainer");
+
+            SOUPKITCHENS.forEach((soupKitchen) => {
+                const soupKitchenCard = createSoupKitchenCard(soupKitchen);
+                container.appendChild(soupKitchenCard);
+            });
+        }
+
+        // Call the function to populate the container
+        populateSoupKitchens();
+    </script>
 
     <footer>
         <div class="container">
