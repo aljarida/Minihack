@@ -17,6 +17,7 @@ const SOUPKITCHENS = [
      staffAvailability: 5,
      volunteerOpenings: 3,
      skillsNeeded: "Cooking, Serving",
+     description: " Nestled in the heart of Boston, our Soup Kitchen has been a sanctuary for the hungry and a beacon of hope for our community. With a warm and welcoming atmosphere, we serve hearty meals to those in need, fostering a sense of togetherness that transcends the simple act of dining.",
    },
     {
      name: "Harbor Light Soup House",
@@ -36,6 +37,7 @@ const SOUPKITCHENS = [
      staffAvailability: 6,
      volunteerOpenings: 2,
      skillsNeeded: "Serving, Cleaning",
+     description: "Perched along the picturesque harbor, the Harbor Light Soup House offers not only delicious, steaming bowls of soup but also a tranquil escape from the bustle of daily life. Our goal is to provide comfort through food and surroundings, allowing visitors to savor both our nourishing dishes and the serene waterfront views.",
    },
 {
      name: "Beacon Hill Food Stop",
@@ -55,6 +57,7 @@ const SOUPKITCHENS = [
      staffAvailability: 7,
      volunteerOpenings: 4,
      skillsNeeded: "Cooking, Cleaning, Serving",
+     description: "Located at the crossroads of Beacon Hill, our Food Stop is a cherished gathering place for neighbors and visitors alike. We offer wholesome meals that warm the body and the soul, creating a welcoming haven in the heart of our historic neighborhood.",
    },
   {
      name: "Fenway Community Kitchen",
@@ -74,6 +77,7 @@ const SOUPKITCHENS = [
      staffAvailability: 8,
      volunteerOpenings: 3,
      skillsNeeded: "Serving, Cleaning",
+     description: "Proudly serving the Fenway community, our kitchen is a testament to the power of unity. We believe that a shared meal can bridge gaps and build connections, so we prepare nutritious dishes with care and dedication to nourish both the body and the spirit of our neighbors.",
    },
    {
      name: "North End Nourish",
@@ -93,6 +97,7 @@ const SOUPKITCHENS = [
      staffAvailability: 6,
      volunteerOpenings: 2,
      skillsNeeded: "Cooking, Serving, Management",
+     description: "Bringing the rich flavors of Italian cuisine to North End, our Nourish kitchen is a celebration of tradition and community. Every meal is prepared with love, embracing the culinary heritage of the area and offering a taste of home to all who enter.",
    },
    {
      name: "Back Bay Buffet",
@@ -112,6 +117,7 @@ const SOUPKITCHENS = [
      staffAvailability: 7,
      volunteerOpenings: 4,
      skillsNeeded: "Cooking, Serving, Cashiering",
+     description: "In the heart of Back Bay, our Buffet is a place where people from all walks of life can gather around a table and share a meal. We believe in the power of food to create bonds, and our diverse menu reflects the rich tapestry of our community.",
    },
   {
      name: "Dorchester Dine House",
@@ -131,6 +137,7 @@ const SOUPKITCHENS = [
      staffAvailability: 8,
      volunteerOpenings: 3,
      skillsNeeded: "Cooking, Serving, Cleaning",
+     description: "Dorchester's Dine House is more than just a place to eat; it's a place to find warmth, compassion, and support. Our doors are open to everyone, and our menu is designed to provide comfort, sustenance, and a sense of belonging.",
    },
     {
      name: "Charlestown Chow Time",
@@ -150,6 +157,7 @@ const SOUPKITCHENS = [
      staffAvailability: 9,
      volunteerOpenings: 2,
      skillsNeeded: "Cooking, Serving, Management",
+     description: "At Chow Time in Charlestown, we're dedicated to serving up delicious, nutritious meals to our neighbors in need. Our commitment to fostering a sense of community extends beyond our kitchen, as we believe in the power of shared meals to uplift spirits and inspire hope.",
    },
    {
      name: "Roxbury Food Retreat",
@@ -169,6 +177,7 @@ const SOUPKITCHENS = [
      staffAvailability: 7,
      volunteerOpenings: 4,
      skillsNeeded: "Cooking, Serving, Cleaning",
+     description: "Roxbury's Food Retreat is a peaceful oasis where individuals and families can escape the challenges of daily life and find solace in a nourishing meal. Our menu is crafted with care, offering a respite and a taste of home to all who visit.",
    },
    {
      name: "South End Soup Station",
@@ -188,5 +197,6 @@ const SOUPKITCHENS = [
      staffAvailability: 8,
      volunteerOpenings: 3,
      skillsNeeded: "Cooking, Serving, Management",
+     description: "All aboard the South End Soup Station, where we're dedicated to providing warm, comforting soups and a friendly atmosphere to our vibrant community. Whether you're in need of a hot meal or simply seeking companionship, you'll find both here in abundance.",
    },
  ]
