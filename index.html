@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="lib/geolib.js"></script>
     <script src="index.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -129,8 +128,25 @@
             const container = document.getElementById("soupKitchensContainer");
 
             SOUPKITCHENS.forEach((soupKitchen) => {
-                const soupKitchenCard = createSoupKitchenCard(soupKitchen);
-                container.appendChild(soupKitchenCard);
+                calculateDistanceToCurrentLocation(soupKitchen.location, (error, distance) => {
+                    if (error) {
+                        console.error(error);
+                    } else {
+                        soupKitchen.distance = distance; // Store the distance in each soup kitchen object
+                    }
+
+                    // Check if all distances have been calculated
+                    if (SOUPKITCHENS.every((sk) => sk.hasOwnProperty("distance"))) {
+                        // Sort the soup kitchens by distance (ascending order)
+                        SOUPKITCHENS.sort((a, b) => a.distance - b.distance);
+
+                        // Create and append cards for the sorted soup kitchens
+                        SOUPKITCHENS.forEach((sortedSoupKitchen) => {
+                            const soupKitchenCard = createSoupKitchenCard(sortedSoupKitchen);
+                            container.appendChild(soupKitchenCard);
+                        });
+                    }
+                });
             });
         }
 

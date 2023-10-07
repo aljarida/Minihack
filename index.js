@@ -99,12 +99,3 @@ function calculateDistanceToCurrentLocation(location, callback) {
         }
     })();
 }
-
-// Example usage:
-calculateDistanceToCurrentLocation('220 Warren St, Boston, MA 02119', (error, distance) => {
-    if (error) {
-        console.error(error);
-    } else {
-        console.log(`Distance to the given location: ${distance.toFixed(2)} km`);
-    }
-});
