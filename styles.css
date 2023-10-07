@@ -7,23 +7,25 @@ body, h1, h2, p, ul, li {
 /* Define general styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f2f2f2;
+    background: linear-gradient(to bottom, #f2f2f2, #dcdcdc);
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Header styles */
-header {
-    background-color: #4CAF50;
+/* Header and Footer styles */
+header, footer {
+    background: linear-gradient(to bottom, #4CAF50, #45A942);
     color: white;
     padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-nav.sticky {
+header {
     position: sticky;
     top: 0;
 }
@@ -56,38 +58,30 @@ main {
 
 .soup-kitchen {
     margin-bottom: 20px;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
 .soup-kitchen-card {
-    background-color: #fff;
+    background: linear-gradient(to bottom, #ffffff, #f2f2f2);
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     padding: 20px;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
 .soup-kitchen-card h2 {
     font-family: 'Helvetica Neue', sans-serif;
     font-size: 24px;
     margin-bottom: 10px;
+    color: #333; /* Change the font color */
 }
 
 .soup-kitchen-card p {
     font-size: 16px;
+    color: #555; /* Change the font color */
 }
 
-/* Footer styles */
-footer {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-}
-
-.soup-kitchen {
-    cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
-}
-
+/* Animation for expanding soup kitchens */
 .soup-kitchen.expanded {
     transform: scale(1);
     background-color: rgba(0, 0, 0, 0.7);
@@ -101,13 +95,13 @@ footer {
 }
 
 .soup-kitchen.expanded .soup-kitchen-card {
-    background-color: white;
+    background: linear-gradient(to bottom, #ffffff, #f2f2f2);
     position: relative;
     margin: 10% auto;
     padding: 20px;
     border-radius: 10px;
     width: 85%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .soup-kitchen.expanded .expanded-content {
