@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soup Kitchen Aggregator</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 </head>
 <body>
     <header>
@@ -124,6 +125,7 @@
         }
 
         // Function to populate the container with soup kitchens
+        /*
         function populateSoupKitchens() {
             const container = document.getElementById("soupKitchensContainer");
 
@@ -151,6 +153,16 @@
         }
 
         // Call the function to populate the container
+        */
+        function populateSoupKitchens() {
+            const container = document.getElementById("soupKitchensContainer");
+
+            SOUPKITCHENS.forEach((soupKitchen) => {
+                const soupKitchenCard = createSoupKitchenCard(soupKitchen);
+                container.appendChild(soupKitchenCard);
+            });
+        }
+
         populateSoupKitchens();
     </script>
 
