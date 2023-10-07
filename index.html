@@ -14,9 +14,9 @@
             <div class="container">
                 <h1>Soup Group</h1>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="registration.html">Add Your Kitchen</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
                 </ul>
             </div>
         </nav>
@@ -119,9 +119,36 @@
         }
     });
 
+    const veganElement = document.createElement("p");
+    veganElement.textContent = `Vegan: ${soupKitchen.vegan}`;
+
+    const lactoseIntolerantElement = document.createElement("p");
+    lactoseIntolerantElement.textContent = `Lactose-Intolerant Friendly: ${soupKitchen.lactoseIntolerant}`;
+
+    const headCountElement = document.createElement("p");
+    headCountElement.textContent = `Head Count: ${soupKitchen.headCount}`;
+
+    const totalCapacityElement = document.createElement("p");
+    totalCapacityElement.textContent = `Total Capacity: ${soupKitchen.totalCapacity}`;
+
+    const waitTimeElement = document.createElement("p");
+    waitTimeElement.textContent = `Wait Time: ${soupKitchen.waitTime}`;
+
+    const volunteerOpeningsElement = document.createElement("p");
+    volunteerOpeningsElement.textContent = `Volunteer Openings: ${soupKitchen.volunteerOpenings}`;
+
+    const skillsNeededElement = document.createElement("p");
+    skillsNeededElement.textContent = `Skills Needed: ${soupKitchen.skillsNeeded}`;
+
     expandedContent.appendChild(distance);
     expandedContent.appendChild(staffAvailability);
+    expandedContent.appendChild(skillsNeededElement);
+    expandedContent.appendChild(waitTimeElement);
+    expandedContent.appendChild(totalCapacityElement);
+    expandedContent.appendChild(headCountElement);
     expandedContent.appendChild(halal);
+    expandedContent.appendChild(lactoseIntolerantElement);
+    expandedContent.appendChild(veganElement);
 
     // Add more information elements as needed
 
