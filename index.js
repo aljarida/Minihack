@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function calculateDistanceToCurrentLocation(location, callback) {
-    const apiKey = '3f01a84a9b7b4bf7bcfa5bdc9ae83dc2';
+    const apiKey = 'fb6d7ba712de4feba9f178f58a60f0cf';
 
     // Function to convert an address to latitude and longitude using the OpenCage Geocoding API
     async function geocodeAddress(address) {
