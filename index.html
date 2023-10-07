@@ -64,14 +64,46 @@
             const staffAvailability = document.createElement("p");
             staffAvailability.textContent = `Staff Availability: ${soupKitchen.staffAvailability}`;
 
+            const halal = document.createElement("p");
+            halal.textContent = `Halal: ${soupKitchen.halal}`;
+
             const image = document.createElement("img");
             image.src = soupKitchen.image;
 
             image.style.width = "50%";
             image.style.height = "auto";
 
-            expandedContent.appendChild(staffAvailability);
+            const veganElement = document.createElement("p");
+            veganElement.textContent = `Vegan: ${soupKitchen.vegan}`;
+
+            const lactoseIntolerantElement = document.createElement("p");
+            lactoseIntolerantElement.textContent = `Lactose-Intolerant Friendly: ${soupKitchen.lactoseIntolerant}`;
+
+            const headCountElement = document.createElement("p");
+            headCountElement.textContent = `Head Count: ${soupKitchen.headCount}`;
+
+            const totalCapacityElement = document.createElement("p");
+            totalCapacityElement.textContent = `Total Capacity: ${soupKitchen.totalCapacity}`;
+
+            const waitTimeElement = document.createElement("p");
+            waitTimeElement.textContent = `Wait Time: ${soupKitchen.waitTime}`;
+
+            const volunteerOpeningsElement = document.createElement("p");
+            volunteerOpeningsElement.textContent = `Volunteer Openings: ${soupKitchen.volunteerOpenings}`;
+
+            const skillsNeededElement = document.createElement("p");
+            skillsNeededElement.textContent = `Skills Needed: ${soupKitchen.skillsNeeded}`;
+
             expandedContent.appendChild(image);
+            expandedContent.appendChild(staffAvailability);
+            expandedContent.appendChild(halal);
+            expandedContent.appendChild(skillsNeededElement);
+            expandedContent.appendChild(waitTimeElement);
+            expandedContent.appendChild(totalCapacityElement);
+            expandedContent.appendChild(headCountElement);
+            expandedContent.appendChild(lactoseIntolerantElement);
+            expandedContent.appendChild(veganElement);
+            
             // Add more information elements as needed
 
             // Append the expanded content to the card
